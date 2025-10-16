@@ -1,6 +1,4 @@
-# Things-TODO
-Things TODO is a web application where you can manage your daily tasks.
-# My First Long-Term Project
+# Things-TODO | My First Long-Term Project
 
 I started this Things Todo app development in October 2025 — it’s my first long-term build that will keep evolving as I learn and improve my front-end skills.
 
