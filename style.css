@@ -4,3 +4,14 @@ body{
   height: 1000px;
   overflow: hidden;
 }
+
+#list{
+  margin-top: 0.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 500px;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: scroll;
+}

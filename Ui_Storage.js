@@ -3,14 +3,14 @@ let task_list = JSON.parse(localStorage.getItem("task_list")) || {};
 
 const body = document.body;
 body.style.background = localStorage.getItem("bg");
+body.style.transition = "all 0.1s";
 // add btb
 const appName = document.getElementById("Appname");
+
 appName.style.color = localStorage.getItem("tg");
 appName.style.marginLeft = "2rem";
 const btn = document.getElementById("addbtn");
-btn.style.position = "absolute";
-btn.style.left = "300px"
-btn.style.top = "78px"
+
 btn.style.border = `2px solid ${localStorage.getItem("tg")}`;
 btn.style.backgroundColor = localStorage.getItem("bg")
 btn.style.color = localStorage.getItem("tg");
@@ -24,7 +24,8 @@ btn.style.boxShadow = "0 3px 5px rgba(0, 0, 0, 0.3)";
 // Dynamic Ui
 const input = document.getElementById("input");
 input.style.fontSize = "0.9rem";
-input.style.marginLeft = "0.2rem";
+input.style.marginLeft = "0.1rem";
+input.style.boxShadow = "0 3px 5px rgba(0, 0, 0, 0.3)";
 input.style.border = `2px solid ${localStorage.getItem("tg")}`;
 input.style.backgroundColor = localStorage.getItem("bg");
 input.style.color = localStorage.getItem("tg");
@@ -34,11 +35,11 @@ const todo = document.getElementById("Todo-List");
 let task_count = document.getElementById("count");
 // hamburger manu
 const manu = document.createElement("ul");
-manu.style.width = "3px";
+manu.style.width = "4px";
 manu.style.height = "90px";
 manu.style.position = "absolute";
 manu.style.top = "60px";
-manu.style.left = "17px";
+manu.style.left = "20px";
 manu.style.backgroundColor = localStorage.getItem("bg");
 manu.style.border = `2px solid ${localStorage.getItem("tg")}`;
 manu.style.color = localStorage.getItem("tg");
@@ -164,6 +165,16 @@ li1.addEventListener("click", () => {
     manuBtn.style.color = localStorage.getItem("tg");
     
     task.style.color = localStorage.getItem("tg");
+    save_editing.style.backgroundColor = localStorage.getItem("bg");
+    save_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+    save_editing.style.color = localStorage.getItem("tg");
+    task_editing.style.backgroundColor = localStorage.getItem("bg");
+    task_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+    task_editing.style.color = localStorage.getItem("tg");
+    task_input.style.border = `2px solid ${localStorage.getItem("tg")}`;
+    task_input.style.color = localStorage.getItem("tg");
+    task_input.style.backgroundColor = localStorage.getItem("bg");
+    
   } else {
     localStorage.setItem("bg", "white");
     localStorage.setItem("tg", "black");
@@ -192,6 +203,17 @@ li1.addEventListener("click", () => {
     manuBtn.style.color = localStorage.getItem("tg");
     
     task.style.color = localStorage.getItem("tg");
+    
+    save_editing.style.backgroundColor = localStorage.getItem("bg");
+    save_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+    save_editing.style.color = localStorage.getItem("tg");
+    task_editing.style.backgroundColor = localStorage.getItem("bg");
+    task_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+    task_editing.style.color = localStorage.getItem("tg");
+    task_input.style.border = `2px solid ${localStorage.getItem("tg")}`;
+    task_input.style.color = localStorage.getItem("tg");
+    task_input.style.backgroundColor = localStorage.getItem("bg");
+    
   }
 });
 

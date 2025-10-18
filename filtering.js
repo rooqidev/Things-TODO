@@ -63,6 +63,59 @@ function completed_list() {
       task.textContent = `${key}`;
       task.style.color = localStorage.getItem("tg");
       
+      // Task Editing Feature
+      const task_editing = document.createElement("div");
+      const task_input = document.createElement("input");
+      const save_editing = document.createElement("button");
+      task_editing.append(task_input, save_editing);
+      document.body.appendChild(task_editing);
+      task_editing.style.position = "absolute";
+      task_editing.style.top = "300px";
+      task_editing.style.left = "20px";
+      task_editing.style.height = "150px";
+      task_editing.style.width = "325px";
+      task_editing.style.textAlign = "center";
+      task_editing.style.backgroundColor = localStorage.getItem("bg");
+      task_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+      task_editing.style.color = localStorage.getItem("tg");
+      task_editing.style.boxShadow = "0 3px 5px rgba(0, 0, 0, 0.4)";
+      task_editing.style.borderRadius = "0.5rem";
+      task_input.style.height = "29px";
+      task_input.style.position = "absolute";
+      task_input.style.top = "40px";
+      task_input.style.left = "41px";
+      task_input.style.width = "234px";
+      task_input.style.border = `2px solid ${localStorage.getItem("tg")}`;
+      task_input.style.color = localStorage.getItem("tg");
+      task_input.style.backgroundColor = localStorage.getItem("bg");
+      task_input.style.borderRadius = "0.5rem";
+      task_input.value = key;
+      save_editing.textContent = "Save";
+      save_editing.style.backgroundColor = localStorage.getItem("bg");
+      save_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+      save_editing.style.color = localStorage.getItem("tg");
+      save_editing.style.padding = "0.5rem 1.7rem";
+      save_editing.style.position = "absolute";
+      save_editing.style.top = "90px";
+      save_editing.style.left = "123px";
+      save_editing.style.borderRadius = "0.5rem";
+      save_editing.style.boxShadow = "0 3px 5px rgba(0, 0, 0, 0.4)";
+      task_editing.style.display = "none";
+      task.addEventListener("dblclick", () => {
+        task_editing.style.display = "block";
+        save_editing.addEventListener("click", () => {
+          if (task_input.value === key) {
+            task_editing.style.display = "none";
+          } else {
+            task_list[task_input.value] = "o";
+            delete task_list[key];
+            localStorage.setItem("task_list", JSON.stringify(task_list));
+            task_editing.style.display = "none";
+            completed_list();
+          }
+        });
+      });
+      
       const checkBtn = document.createElement("button");
       checkBtn.textContent = task_list[key];
       checkBtn.style.marginLeft = "1rem";
@@ -140,6 +193,15 @@ function completed_list() {
         asking.style.color = localStorage.getItem("tg")
         
         task.style.color = localStorage.getItem("tg");
+        task_editing.style.backgroundColor = localStorage.getItem("bg");
+        task_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+        task_editing.style.color = localStorage.getItem("tg");
+        task_input.style.border = `2px solid ${localStorage.getItem("tg")}`;
+        task_input.style.color = localStorage.getItem("tg");
+        task_input.style.backgroundColor = localStorage.getItem("bg");
+        save_editing.style.backgroundColor = localStorage.getItem("bg");
+        save_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+        save_editing.style.color = localStorage.getItem("tg");
         
       });
       
@@ -217,6 +279,61 @@ function incompleted_list() {
       task.style.marginRight = "2rem";
       task.textContent = `${key}`;
       task.style.color = localStorage.getItem("tg");
+      
+      
+      // Task Editing Feature
+      const task_editing = document.createElement("div");
+      const task_input = document.createElement("input");
+      const save_editing = document.createElement("button");
+      task_editing.append(task_input, save_editing);
+      document.body.appendChild(task_editing);
+      task_editing.style.position = "absolute";
+      task_editing.style.top = "300px";
+      task_editing.style.left = "20px";
+      task_editing.style.height = "150px";
+      task_editing.style.width = "325px";
+      task_editing.style.textAlign = "center";
+      task_editing.style.backgroundColor = localStorage.getItem("bg");
+      task_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+      task_editing.style.color = localStorage.getItem("tg");
+      task_editing.style.boxShadow = "0 3px 5px rgba(0, 0, 0, 0.4)";
+      task_editing.style.borderRadius = "0.5rem";
+      task_input.style.height = "29px";
+      task_input.style.position = "absolute";
+      task_input.style.top = "40px";
+      task_input.style.left = "41px";
+      task_input.style.width = "234px";
+      task_input.style.border = `2px solid ${localStorage.getItem("tg")}`;
+      task_input.style.color = localStorage.getItem("tg");
+      task_input.style.backgroundColor = localStorage.getItem("bg");
+      task_input.style.borderRadius = "0.5rem";
+      task_input.value = key;
+      save_editing.textContent = "Save";
+      save_editing.style.backgroundColor = localStorage.getItem("bg");
+      save_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+      save_editing.style.color = localStorage.getItem("tg");
+      save_editing.style.padding = "0.5rem 1.7rem";
+      save_editing.style.position = "absolute";
+      save_editing.style.top = "90px";
+      save_editing.style.left = "123px";
+      save_editing.style.borderRadius = "0.5rem";
+      save_editing.style.boxShadow = "0 3px 5px rgba(0, 0, 0, 0.4)";
+      task_editing.style.display = "none";
+      task.addEventListener("dblclick", () => {
+        task_editing.style.display = "block";
+        save_editing.addEventListener("click", () => {
+          if (task_input.value === key) {
+            task_editing.style.display = "none";
+          } else {
+            task_list[task_input.value] = "o";
+            delete task_list[key];
+            localStorage.setItem("task_list", JSON.stringify(task_list));
+            task_editing.style.display = "none";
+            incompleted_list();
+          }
+        });
+      });
+      
       const checkBtn = document.createElement("button");
       checkBtn.textContent = task_list[key];
       checkBtn.style.marginLeft = "1rem";
@@ -272,8 +389,6 @@ function incompleted_list() {
       
       
       // Dark Mode
-      
-      
       li1.addEventListener("click", () => {
         delbtn.style.border = `2px solid ${localStorage.getItem("tg")}`;
         delbtn.style.color = localStorage.getItem("tg")
@@ -296,6 +411,17 @@ function incompleted_list() {
         askSure.style.top = "300px";
         asking.style.color = localStorage.getItem("tg")
         task.style.color = localStorage.getItem("tg");
+        task_editing.style.backgroundColor = localStorage.getItem("bg");
+        task_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+        task_editing.style.color = localStorage.getItem("tg");
+        
+        task_input.style.border = `2px solid ${localStorage.getItem("tg")}`;
+        task_input.style.color = localStorage.getItem("tg");
+        task_input.style.backgroundColor = localStorage.getItem("bg");
+        
+        save_editing.style.backgroundColor = localStorage.getItem("bg");
+        save_editing.style.border = `2px solid ${localStorage.getItem("tg")}`;
+        save_editing.style.color = localStorage.getItem("tg");
       });
       
     }
