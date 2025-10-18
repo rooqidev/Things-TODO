@@ -1,7 +1,8 @@
 # Things-TODO | My First Long-Term Project
+Link: https://rooqidev.github.io/Things-TODO/
+Repo: https://github.com/rooqidev
 
 I started this Things Todo app development just recently in October 2025 — it’s my first long-term build that will keep evolving as I learn and improve my front-end skills.
-
 ### 🔧 Improvements Made This Week
 - Added Scroll flow in task List
 - Task editing after adding(Double tap on task to rename it)
