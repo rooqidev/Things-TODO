@@ -1,5 +1,12 @@
 //using local storage for saving tasks
 let task_list = JSON.parse(localStorage.getItem("task_list")) || {};
+if (localStorage.getItem("bg") === "black") {
+  localStorage.setItem("bg", "black");
+  localStorage.setItem("tg", "white");
+} else {
+  localStorage.setItem("bg", "white");
+  localStorage.setItem("tg", "black");
+};
 
 const body = document.body;
 body.style.background = localStorage.getItem("bg");
